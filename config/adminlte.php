@@ -210,13 +210,29 @@ return [
     'menu' => [
 
         [
-            'text' => 'Home',
+            'text' => 'Dashboard',
             'url'  => 'admin',
-            'icon' => 'far fa-fw fa-file',
-        ]
+            'icon' => 'fas fa-tachometer-alt',
         ],
-
+        [
+            'text' => 'Financeiro',
+            'icon' => 'fas fa-money-bill-wave',
+            'submenu' => [
+                [
+                    'text' => 'saldo',
+                    'url' => 'admin/balance',
+                    'icon' => "fas fa-credit-card",
+                ],
+                [
+                    'text' => 'Histórico',
+                    'url' => 'admin/historic',
+                    'icon' => "fas fa-history",
+                ]
+            ]
+        ]
     
+    ],
+   
     /*
     |--------------------------------------------------------------------------
     | Menu Filters
