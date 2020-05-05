@@ -17,5 +17,10 @@ class UserTableSeeder extends Seeder
             'email' => 'roberto.britz@hotmail.com',
             'password' => bcrypt('123456'),
         ]);
+        User::create([
+            'name' => 'Outro Usuário',
+            'email' => 'outro.britz@hotmail.com',
+            'password' => bcrypt('123456'),
+        ]);
     }
 }

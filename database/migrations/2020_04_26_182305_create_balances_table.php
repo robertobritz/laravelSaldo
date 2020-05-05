@@ -17,7 +17,7 @@ class CreateBalancesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned(); // para trabalhar com chave estrangeira
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // chave estrangeira, da coluna ID da tabela users. Apaga o registro se for apagado a id do usuário 
-            $table->double('amount',10,2);
+            $table->double('amount',10,2)->default(0);
         });
     }
 
