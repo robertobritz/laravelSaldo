@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 route::middleware(['auth'])->group(function () {
         route::namespace('Admin')->group(function(){  
             route::prefix('admin')->group(function(){     
-                
+               
+                route::any('historic', 'BalanceController@searchHistoric')->name('historic.search');    
                 route::get('historic', 'BalanceController@historic')->name('admin.historic');    
 
                 route::get('balance/transfer', 'BalanceController@transfer')->name('balance.transfer');
