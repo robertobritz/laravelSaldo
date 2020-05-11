@@ -7,7 +7,7 @@ route::middleware(['auth'])->group(function () {
         route::namespace('Admin')->group(function(){  
             route::prefix('admin')->group(function(){     
                
-                route::any('historic', 'BalanceController@searchHistoric')->name('historic.search');    
+                route::any('historic-search', 'BalanceController@searchHistoric')->name('historic.search');    
                 route::get('historic', 'BalanceController@historic')->name('admin.historic');    
 
                 route::get('balance/transfer', 'BalanceController@transfer')->name('balance.transfer');
@@ -26,6 +26,10 @@ route::middleware(['auth'])->group(function () {
     });
 });
 });
+
+route::post('atualizar-perfil', 'Admin\UserController@profileUpdate')->name('profile.update')->middleware('auth');
+route::get('meu-perfil', 'Admin\UserController@profile')->name('profile')->middleware('auth');
+
 Route::get('/', 'site\siteController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
